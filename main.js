@@ -16,7 +16,16 @@ function calculate() {
 	var factor = qualifying_service >= 30 ? 1 : qualifying_service/30;
 	monthly_pension = document.createTextNode(`Rs. ${(avg/2)*factor}`);
 
-	document.getElementById('ts').appendChild(total_service_text);
-	document.getElementById('qs').appendChild(qualifying_service_text);
-	document.getElementById('pension').appendChild(monthly_pension);
+	replaceIfDuplicate('ts', total_service_text);
+	replaceIfDuplicate('qs', qualifying_service_text);
+	replaceIfDuplicate('pension', monthly_pension);
+}
+
+function replaceIfDuplicate(id, newNode) {
+	tagId = document.getElementById(id)
+	if (tagId.childNodes.length > 1) {
+		tagId.replaceChild(newNode, tagId.childNodes[1]);
+	} else {
+		tagId.appendChild(newNode);
+	}
 }
