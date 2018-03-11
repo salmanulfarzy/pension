@@ -10,7 +10,8 @@
 <form action="#">
 	<label for="doj">Date of Joining</label><input type="date" id="doj">
 	<label for="dor">Date of Retirement</label><input type="date" id="dor">
-	<label for="avg_emol">Average Emoluments</label><input type="number" id="avg_emol" value="10000">
+	<label for="avg_emol">Average of Last 10 months Emoluments</label><input type="number" id="avg_emol" value="10000">
+	<label for="last_pay">Last Pay</label><input type="number" id="last_pay" value="10500">
 	<button type="submit" onclick="calculate()">Submit</button>
 </form>
 
@@ -18,6 +19,7 @@
 	<p id="ts">Total Serivce Period : </p>
 	<p id="qs">Qualifying Service : </p>
 	<p id="pension">Monthly Pension : </p>
+	<p id="family_pension">Family Pension : </p>
 </div>
 </body>
 <script src="main.js"></script>

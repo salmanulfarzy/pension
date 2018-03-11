@@ -2,6 +2,7 @@ function calculate() {
 	const date_of_joining = document.getElementById('doj').valueAsDate;
 	const date_of_retirement = document.getElementById('dor').valueAsDate;
 	const avg = document.getElementById('avg_emol').value;
+	const last_pay = document.getElementById('last_pay').value;
 
 	years = Math.abs(date_of_retirement.getFullYear() - date_of_joining.getFullYear());
 	months = Math.abs(date_of_retirement.getMonth() - date_of_joining.getMonth());
@@ -15,10 +16,12 @@ function calculate() {
 
 	var factor = qualifying_service >= 30 ? 1 : qualifying_service/30;
 	monthly_pension = document.createTextNode(`Rs. ${(avg/2)*factor}`);
+	family_pension = document.createTextNode(`Rs. ${0.3*last_pay}`);
 
 	replaceIfDuplicate('ts', total_service_text);
 	replaceIfDuplicate('qs', qualifying_service_text);
 	replaceIfDuplicate('pension', monthly_pension);
+	replaceIfDuplicate('family_pension', family_pension);
 }
 
 function replaceIfDuplicate(id, newNode) {
