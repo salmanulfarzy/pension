@@ -7,19 +7,16 @@
 </head>
 <body>
 <h1>Pension Calulator</h1>
-<form action="">
+<form id="pension" action="#">
 	<label for="doj">Date of Joining</label><input type="date" id="doj">
 	<label for="dor">Date of Retirement</label><input type="date" id="dor">
-	<p id='qs'>Qualifying service : </p>
+	<button type="submit" onclick="calculate()">Submit</button>
 </form>
+
+<div id="qs">
+	<p id="ts">Total Serivce Period : </p>
+	<p id="qs">Qualifying Service : </p>
+</div>
 </body>
-<script>
-	date_of_joining = doj.valueAsDate;
-	date_of_retirement = dor.valueAsDate;
-	years = date_of_retirement.getFullYear() - date_of_joining.getFullYear();
-	months = date_of_retirement.getMonth() - date_of_joining.getMonth();
-	days = date_of_retirement.getDate() - date_of_joining.getDate();
-	text = document.createTextNode( years + ' Years ' + months + ' Months ' + days + ' Days');
-	document.getElementById('qs').appendChild(text);
-</script>
+<script src="main.js"></script>
 </html>
